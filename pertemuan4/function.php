@@ -8,16 +8,17 @@ Mempelajari mengenai Function pada PHP
 */
 ?>
 <?php
-// function salam($waktu = "Datang", $nama = "Admin") {
-//     return "Selamat $waktu, $nama!";
-// }
+function salam($waktu = "Datang", $nama = "Admin") {
+    return "Selamat $waktu, $nama!";
+}
+
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Latihan Function</title>
+    <title>Latihan Function</title>
 </head>
 <body>
     <h1><?= salam("Pagi", "Rizal"); ?></h1>
 </body>
-</html> -->
+</html>

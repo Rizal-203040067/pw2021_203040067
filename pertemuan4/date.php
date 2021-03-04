@@ -25,5 +25,5 @@ Mempelajari mengenai Penganggalan (Date) dan waktu (Time) pada PHP
 // echo date("l", mktime(0,0,0,10,3,2001));
 
 // strtotime
-// echo date("l", strtotime("3 october 2001"));
+echo date("l", strtotime("3 october 2001"));
 ?>
