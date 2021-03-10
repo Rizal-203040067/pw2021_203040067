@@ -13,40 +13,47 @@ Modul 1 Stuktur Kontrol
     <meta charset="UTF-8">
     <title>Latihan 2</title>
     <style>
-        .warna1 {
+        .salmon {
             background-color: salmon;
         }
 
-        .warna2 {
+        .blue {
             background-color: lightblue;
         }
     </style>
 </head>
 <body>
     <table border="1" cellspacing="4" cellpadding="10">
-
+        <!-- Untuk mengatur Baris  -->
         <?php for($i = 1 ; $i <= 6; $i++): ?>
+            <!-- Baris Ganjil -->
             <?php if($i%2 == 1):?>
+                <!-- Untuk mengatur Kolom  -->
                 <?php for($j = 1 ; $j <= 6; $j++): ?>
+                    <!-- Kolom Ganjil -->
                     <?php if($j%2 == 1 ): ?>
-                        <td class="warna2"><?= "";?></td>
+                        <td class="blue">
+                    <!-- Kolom Genap -->
                     <?php else :?>
-                        <td class="warna1"></td>
+                        <td class="salmon">
                     <?php endif; ?>
                 <?php endfor;?>
 
-
+            <!-- Baris Genap -->
             <?php else:?>
+                <!-- Untuk mengatur Kolom  -->
                 <?php for($j = 1 ; $j <= 6; $j++): ?>
-                    <?php if($j%2 == 1 ): ?>
-                        <td class="warna1"><?= "";?></td>
+                    <!-- Kolom Genap -->
+                    <?php if($j%2 == 0 ): ?>
+                        <td class="blue">
+                    <!-- Kolom Ganjil -->
                     <?php else :?>
-                        <td class="warna2"></td>
+                        <td class="salmon">
                     <?php endif; ?>
                 <?php endfor;?>
             <?php endif;?>
         
-        </tr>
+        <tr>
         <?php endfor; ?>
     </table>
 </body>
