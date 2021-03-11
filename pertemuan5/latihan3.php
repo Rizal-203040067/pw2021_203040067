@@ -4,7 +4,7 @@ Rizal Baihaqi
 203040067
 https://github.com/Rizal-203040067/pw2021_203040067.git
 Pertemuan 5 - 10 Maret 2021
-Mempelajari mengenai pengulangan untuk Array pada PHP
+Mempelajari mengenai pengulangan Array untuk menggunakan data pada PHP
 */
 ?>
 <?php
