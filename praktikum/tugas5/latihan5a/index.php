@@ -3,7 +3,7 @@
 Rizal Baihaqi
 203040067
 Shift Jum'at 10.00 - 11.00
-Modul 4 MySQL, Koneksi Database, Menampilkan Data
+Modul 5 CRUD dan Searching
 */
 ?>
 

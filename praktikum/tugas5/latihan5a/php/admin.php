@@ -3,13 +3,13 @@
 Rizal Baihaqi
 203040067
 Shift Jum'at 10.00 - 11.00
-Modul 4 MySQL, Koneksi Database, Menampilkan Data
+Modul 5 CRUD dan Searching
 */
 ?>
 
 <?php
 
-require 'php/functions.php';
+require 'functions.php';
 $games = query("SELECT * FROM game");
 
 ?>
@@ -66,11 +66,15 @@ $games = query("SELECT * FROM game");
              <?php $i = 1; ?>
              <?php foreach($games as $game) : ?>
              <tr>
-                <td width = "200px"><a href="php/detail.php?id=<?= $game["id"]; ?>"><image width="200px" src="assets/<?= $game["image"] ?>"></a></td>
-                <td width = "100px"><a href="php/detail.php?id=<?= $game["id"]; ?>"><?= $game["name"]; ?></a></td>
+                <td width = "200px"><image width="200px" src="../assets/<?= $game["image"] ?>"></a></td>
+                <td width = "100px"><?= $game["name"]; ?></a></td>
                 <td width = "100px"><?= $game["date"]; ?></td>
                 <td width = "500px"><?= $game["about"]; ?></td>
                 <td width = "100px">Rp <?= $game["price"]; ?></td>
+                <td class="col-2">
+                    <a href=""><button type="button" class="btn btn-success">UPDATE</button></a>
+                    <a href=""><button type="button" class="btn btn-danger">DELETE</button></a>
+                </td>
              </tr>
              <?php $i++ ?>
              <?php endforeach; ?>
