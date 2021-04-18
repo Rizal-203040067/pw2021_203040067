@@ -20,8 +20,7 @@ function query($sql) {
 
 
 function add($data) {
-    $connect = mysqli_connect("localhost", "root", "");
-    mysqli_select_db($connect, "pw_tubes_203040067");
+    $connect = koneksi();
 
     $image = htmlspecialchars($data['image']);
     $name = htmlspecialchars($data['name']);

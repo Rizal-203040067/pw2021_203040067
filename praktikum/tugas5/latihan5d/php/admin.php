@@ -76,8 +76,8 @@ $games = query("SELECT * FROM game");
                 <td width = "500px"><?= $game["about"]; ?></td>
                 <td width = "100px">Rp <?= $game["price"]; ?></td>
                 <td class="col-2">
-                    <a href="update.php?id=<? $games['id'] ?>"><button type="button" class="btn btn-success">UPDATE</button></a>
-                    <a href="delete.php?id=<? $games['id'] ?>" onclick="return confirm('Hapus Data??')"><button type="button" class="btn btn-danger">DELETE</button></a>
+                    <a href="update.php?id=<?= $game['id'] ?>"><button type="button" class="btn btn-success">UPDATE</button></a>
+                    <a href="delete.php?id=<?= $game['id'] ?>" onclick="return confirm('Hapus Data??')"><button type="button" class="btn btn-danger">DELETE</button></a>
                 </td>
              </tr>
              <?php $i++ ?>

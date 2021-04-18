@@ -9,8 +9,16 @@ Modul 5 CRUD dan Searching
 
 <?php
 
-require 'functions.php';
-$games = query("SELECT * FROM game");
+require 'php/functions.php';
+
+if (isset($_GET['search'])) {
+  $keyword = $_GET['keyword'];
+  $games = query("SELECT * FROM game WHERE
+          name LIKE '%$keyword%' OR
+          price LIKE '%$keyword%' ");
+} else {
+  $games = query("SELECT * FROM game");
+}
 
 ?>
 
@@ -24,7 +32,7 @@ $games = query("SELECT * FROM game");
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <title>Admin Code Gaming</title>
+    <title>Code Gaming</title>
   </head>
   <body class="bg-dark">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
@@ -45,16 +53,12 @@ $games = query("SELECT * FROM game");
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-primary" type="submit">Search</button>
+        <input type="text" name="keyword" autofocus class="form-control me-2" placeholder="Search" aria-label="Search">
+        <button type="submit" name="search" class="btn btn-outline-primary">Search</button>
       </form>
         </div>
     </div>
     </nav>
-
-    <div class="add px-4 pt-3">
-      <a href="add.php"><button type="button" class="btn btn-primary">ADD</button></a>
-    </div>
 
     <table class="table table-dark table-hover table-striped">
         <thead>
@@ -67,21 +71,25 @@ $games = query("SELECT * FROM game");
             </tr>
         </thead>
         <tbody>
+          <?php if (empty($games)) : ?>
+             <tr>
+               <td colspan="7">
+                  <h1 style="text-align: center;">Data tidak ditemukan</h1>
+               </td>
+             </tr>
+          <?php else : ?>
              <?php $i = 1; ?>
              <?php foreach($games as $game) : ?>
              <tr>
-                <td width = "200px"><image width="200px" src="../assets/<?= $game["image"] ?>"></a></td>
-                <td width = "100px"><?= $game["name"]; ?></a></td>
+                <td width = "200px"><a href="php/detail.php?id=<?= $game["id"]; ?>"><image width="200px" src="assets/<?= $game["image"] ?>"></a></td>
+                <td width = "100px"><a href="php/detail.php?id=<?= $game["id"]; ?>"><?= $game["name"]; ?></a></td>
                 <td width = "100px"><?= $game["date"]; ?></td>
                 <td width = "500px"><?= $game["about"]; ?></td>
                 <td width = "100px">Rp <?= $game["price"]; ?></td>
-                <td class="col-2">
-                    <a href=""><button type="button" class="btn btn-success">UPDATE</button></a>
-                    <a href="delete.php?id=<?= $game['id'] ?>" onclick="return confirm('Hapus Data??')"><button type="button" class="btn btn-danger">DELETE</button></a>
-                </td>
              </tr>
              <?php $i++ ?>
              <?php endforeach; ?>
+          <?php endif; ?>
         </tbody>
     </table>
         

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Mar 2021 pada 04.59
+-- Waktu pembuatan: 15 Apr 2021 pada 18.04
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `game` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL,
   `image` varchar(100) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `date` varchar(200) DEFAULT NULL,
@@ -46,6 +46,26 @@ INSERT INTO `game` (`id`, `image`, `name`, `date`, `about`, `price`) VALUES
 (3, '3.jpg', 'Resident Evil 6', '22 Mar, 2013', 'Blending action and survival horror, Resident Evil 6 promises to be the dramatic horror experience of 2013. Resident Evil favorites Leon S. Kennedy, Chris Redfield and Ada Wong are joined by new characters, including Jake Muller, to face a new horror, the highly virulent C-virus, as the narrative moves between North America, the war-torn Eastern European state of Edonia and the Chinese city of Lanshiang.', 289094),
 (4, '4.jpg', 'Resident Evil 7', '24 Jan, 2017', 'Resident Evil 7 biohazard is the next major entry in the renowned Resident Evil series and sets a new course for the franchise as it leverages its roots and opens the door to a truly terrifying horror experience. A dramatic new shift for the series to first person view in a photorealistic style powered by Capcom’s new RE Engine, Resident Evil 7 delivers an unprecedented level of immersion that brings the thrilling horror up close and personal.', 239999),
 (5, '5.jpg', 'Resident Evil 8', '7 May,2021', 'Set a few years after the horrifying events in the critically acclaimed Resident Evil 7 biohazard, the all-new storyline begins with Ethan Winters and his wife Mia living peacefully in a new location, free from their past nightmares. Just as they are building their new life together, tragedy befalls them once again.', 1130999);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `game`
+--
+ALTER TABLE `game`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `game`
+--
+ALTER TABLE `game`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

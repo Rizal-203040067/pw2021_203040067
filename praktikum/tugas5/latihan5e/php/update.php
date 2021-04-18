@@ -39,7 +39,7 @@ if (isset($_POST['update'])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <title>Update Code Gaming</title>
+    <title>Form Update Game</title>
 </head>
 <body class="bg-dark">
 
@@ -47,11 +47,8 @@ if (isset($_POST['update'])) {
 
     <h2 class="text-light">Form Update Game</h2>
     <form action="" method="post">
+    <input type="hidden" name="id" id="id" value="<?= $games['id']; ?>">
         <ul class="text-light">
-            <li>
-                <label for="id">Id :</label><br>
-                <input type="hidden" name="id" id="id" required value="<?= $games['id']; ?>">
-            </li>
             <li>
                 <label for="image">Image :</label><br>
                 <input type="text" name="image" id="image" required value="<?= $games['image']; ?>"><br><br>
