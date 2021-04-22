@@ -9,9 +9,11 @@ Modul 6 Session, Cookie, Encryption
 
 <?php
 
+session_start();
+
 if (!isset($_SESSION["username"])) {
-  header("Location: login.php");
-  exit;
+    header("Location: login.php");
+    exit;
 }
 
 require 'functions.php';
