@@ -3,27 +3,19 @@
 Rizal Baihaqi
 203040067
 https://github.com/Rizal-203040067/pw2021_203040067.git
-Pertemuan 10 - 5 Mei 2021
-Mempelajari mengenai koneksi DB dan insert data
+Pertemuan 10 - 15 Mei 2021
+Mempelajari mengenai Delete, Update & Searching Data
 */
 ?>
 
 <?php
-// Koneksi ke DB dan pilih database
-$conn = mysqli_connect('localhost', 'root', '', 'pw_203040067');
-// Query ini tabel mahasiswa
-$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
-// Ubah data ke dalam array
-// $row = mysqli_fetch_row($result); // array numerik
-// $row = mysqli_fetch_assoc($result); // array assosiatiive
-// $row = mysqli_fetch_array($result); // keduanya
-$rows = [];
-while ($row = mysqli_fetch_assoc($result)) {
-  $rows[] = $row;
-}
+require 'functions.php';
+$mahasiswa = query("SELECT * FROM mahasiswa");
 
-// Tampung kedalam variable
-$mahasiswa = $rows;
+// Ketika tombol cari di klik
+if (isset($_POST['cari'])) {
+  $mahasiswa = cari($_POST['keyword']);
+}
 
 ?>
 <!DOCTYPE html>
@@ -38,16 +30,30 @@ $mahasiswa = $rows;
 
 <body>
   <h3>Daftar Mahasiswa</h3>
+  <a href="tambah.php">Tambah Data Mahasiswa</a>
+  <br><br>
+
+  <form action="" method="POST">
+    <input type="text" name="keyword" size="40" placeholder="Masukan keyword pencarian.." autocomplete="off" autofocus>
+    <button type="submit" name="cari">Cari!</button>
+  </form>
+  <br>
+
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
       <th>#</th>
       <th>Gambar</th>
-      <th>NRP</th>
       <th>Nama</th>
-      <th>Email</th>
-      <th>Jurusan</th>
       <th>Aksi</th>
     </tr>
+
+    <?php if (empty($mahasiswa)) : ?>
+      <tr>
+        <td colspan="4">
+          <p style="color: red; font-style:italic; ">Data mahasiswa tidak ditemukan!</p>
+        </td>
+      </tr>
+    <?php endif; ?>
 
     <?php
     $i = 1;
@@ -55,12 +61,9 @@ $mahasiswa = $rows;
       <tr>
         <td><?= $i++; ?></td>
         <td><img src="img/<?= $m['gambar']; ?>" width="60"></td>
-        <td><?= $m['nrp']; ?></td>
         <td><?= $m['nama']; ?></td>
-        <td><?= $m['email']; ?></td>
-        <td><?= $m['jurusan']; ?></td>
         <td>
-          <a href="">ubah</a> | <a href="">hapus</a>
+          <a href="detail.php?id=<?= $m['id'] ?>">Lihat detail</a>
         </td>
       </tr>
     <?php endforeach; ?>

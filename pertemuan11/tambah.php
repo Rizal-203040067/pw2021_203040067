@@ -3,8 +3,8 @@
 Rizal Baihaqi
 203040067
 https://github.com/Rizal-203040067/pw2021_203040067.git
-Pertemuan 10 - 5 Mei 2021
-Mempelajari mengenai koneksi DB dan insert data
+Pertemuan 10 - 15 Mei 2021
+Mempelajari mengenai Delete, Update & Searching Data
 */
 ?>
 
