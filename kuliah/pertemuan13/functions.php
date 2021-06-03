@@ -7,7 +7,6 @@ Pertemuan 13- 1 Juni 2021
 Mempelajari mengenai AJAX live Search dan Upload Gambar
 */
 ?>
-
 <?php
 function koneksi()
 {

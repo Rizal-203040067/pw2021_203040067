@@ -6,8 +6,6 @@ Shift Jum'at 10.00 - 11.00
 Tugas Besar
 */
 ?>
-
-
 <?php
 
 function koneksi()
@@ -38,17 +36,17 @@ function add($data)
     $name = htmlspecialchars($data['name']);
     $date = htmlspecialchars($data['date']);
     $review = htmlspecialchars($data['review']);
-    $about = htmlspecialchars($data['about']);
+    $about = ($data['about']);
     $price = htmlspecialchars($data['price']);
     $img1 = htmlspecialchars($data['img1']);
     $img2 = htmlspecialchars($data['img2']);
     $img3 = htmlspecialchars($data['img3']);
     $img4 = htmlspecialchars($data['img4']);
     $img5 = htmlspecialchars($data['img5']);
-    $purchase = htmlspecialchars($data['purchase']);
+    $purchase = ($data['purchase']);
     $genre = htmlspecialchars($data['genre']);
-    $minsystem = htmlspecialchars($data['minsystem']);
-    $recsystem = htmlspecialchars($data['ecsystem']);
+    $minsystem = ($data['minsystem']);
+    $recsystem = ($data['recsystem']);
 
     $query = "INSERT INTO game
                     VALUES
@@ -77,17 +75,17 @@ function update($data)
     $name = htmlspecialchars($data['name']);
     $date = htmlspecialchars($data['date']);
     $review = htmlspecialchars($data['review']);
-    $about = htmlspecialchars($data['about']);
+    $about = ($data['about']);
     $price = htmlspecialchars($data['price']);
     $img1 = htmlspecialchars($data['img1']);
     $img2 = htmlspecialchars($data['img2']);
     $img3 = htmlspecialchars($data['img3']);
     $img4 = htmlspecialchars($data['img4']);
     $img5 = htmlspecialchars($data['img5']);
-    $purchase = htmlspecialchars($data['purchase']);
+    $purchase = ($data['purchase']);
     $genre = htmlspecialchars($data['genre']);
-    $minsystem = htmlspecialchars($data['minsystem']);
-    $recsystem = htmlspecialchars($data['ecsystem']);
+    $minsystem = ($data['minsystem']);
+    $recsystem = ($data['recsystem']);
 
     $query = "UPDATE game
               SET

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Bulan Mei 2021 pada 19.00
+-- Waktu pembuatan: 03 Jun 2021 pada 12.00
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -82,7 +82,8 @@ INSERT INTO `user` (`id`, `username`, `password`) VALUES
 (1, 'avip', '$2y$10$3.CvJydB4PorP7s2KVDBo.sVz/lhBNIth0V6J3gsUgRrBdMi8C5YK'),
 (2, 'admin', '$2y$10$NwZYUaPRApkj3F4m9/cKkuGmzYLalFSyMoDxYWerz5OHU/42QGGsi'),
 (9, 'bambang', '$2y$10$xXTrfCQsT1fCZqpSc6mHHOMzyM.4sBnlZoiuASfDYPGp9X30rUU46'),
-(10, 'rahman', '$2y$10$oA8KVwXPMiLdkpMzvklIWu2jbVb/VH8m4.hiQncBoMv6.g1hXr/4m');
+(10, 'rahman', '$2y$10$oA8KVwXPMiLdkpMzvklIWu2jbVb/VH8m4.hiQncBoMv6.g1hXr/4m'),
+(11, 'suherman', '$2y$10$pfJHg6EgyYZY3nsdYq16lOHsSIulNkZuCTLYISApbTVgXbOPpmLZ.');
 
 --
 -- Indexes for dumped tables
@@ -108,13 +109,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `game`
 --
 ALTER TABLE `game`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
